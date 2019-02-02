@@ -9,6 +9,7 @@ For part one of this multi-part assignment we'll be implementing a very simple s
 cs361 > <command> list of arguments
 <command> does its thing
 pid: xxxxx status: y
+cs361 >
 ```
 Requirements
 -[ ] Launch a process from the command and pass it a list of arguments
@@ -20,7 +21,8 @@ Your shell should be able to launch commands in the background
 cs361 > <command> list of arguments &
 [1] pid
 cs361 > fg
-<command> is active
+<command> is active and finishes
+cs361 >
 ```
 -[ ] Launch a process from the command and pass it a list of arguments
 -[ ] Run the process in the background
