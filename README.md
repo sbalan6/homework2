@@ -40,4 +40,5 @@ Your shell must execute the ```exit``` command where typing in ```exit``` quits 
 
 ### Input
 * ```<command>``` will be called using its absolute path. IE ls will be called as /bin/ls
+* Command line input will be no longer than 128 characters. 
 * You can assume that command arguments will be separated by spaces. There will be no quotations.
