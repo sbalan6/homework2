@@ -1,5 +1,5 @@
 # Homework 2 - A Simple Shell Pt. 1
-## Due: 16 February 2019
+## Due: 16 February 2019 : 12:00PM Noon
 ### Introduction
 In our time here at UIC, we've all been working in the BASH shell for a good portion of our assignments, but have you ever thought about how it works? [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), has some powerful features! BASH is based on the [Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell) which might make Stephen Bourne cooler than Jason Bourne in my book.
 
