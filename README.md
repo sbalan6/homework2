@@ -1,16 +1,11 @@
 # Homework 2 - A Simple Shell Pt. 1
 ## Due: 16 February 2019
 ### Introduction
-In our time here at UIC, we've all been working in the BASH shell for a good portion of our assignments, but have you ever thought about how it works? [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), has some powerful features! BASH is based on the [Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell) which might make Stephen Bourne cooler than Jason Bourne in my book!
+In our time here at UIC, we've all been working in the BASH shell for a good portion of our assignments, but have you ever thought about how it works? [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), has some powerful features! BASH is based on the [Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell) which might make Stephen Bourne cooler than Jason Bourne in my book.
 
 ### Assignment
 For part one of this multi-part assignment we'll be implementing a very simple shell. Your shell should be able to execute commands in the foreground. 
-```bash
-cs361 > *command* list of arguments
-<command> does its thing
-pid: xxxxx status: y
-cs361 >
-```
+
 ### Requirements
 * Prompt the user to enter a command with the prompt ```cs361 >```
 * Parse user input into a command and a list of arguments
