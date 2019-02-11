@@ -1,23 +1,31 @@
- #include "csapp.h"
- #define MAXARGS 128
-
- /* Function prototypes */
- void eval(char *cmdline);
- int parseline(char *buf, char **argv);
- int builtin_command(char **argv);
-//main
- int main()
+void eval(char *cmdline)
  {
- char cmdline[MAXLINE]; /* Command line */
+ char *argv[MAXARGS]; /* Argument list execve() */
+ char buf[MAXLINE]; /* Holds modified command line */
+ int bg; /* Should the job run in bg or fg? */
+ pid_t pid; /* Process id */
 
- while (1) {
- /* Read */
- printf("> ");
- Fgets(cmdline, MAXLINE, stdin);
- if (feof(stdin))
+ strcpy(buf, cmdline);
+ bg = parseline(buf, argv);
+ if (argv[0] == NULL)
+ return; /* Ignore empty lines */
+
+ if (!builtin_command(argv)) {
+ if ((pid = Fork()) == 0) { /* Child runs user job */
+ if (execve(argv[0], argv, environ) < 0) {
+ printf("%s: Command not found.\n", argv[0]);
  exit(0);
-
- /* Evaluate */
- eval(cmdline);
  }
+ }
+
+ /* Parent waits for foreground job to terminate */
+ if (!bg) {
+ int status;
+ if (waitpid(pid, &status, 0) < 0)
+ unix_error("waitfg: waitpid error");
+ }
+ else
+ printf("%d %s", pid, cmdline);
+ }
+ return;
  }
